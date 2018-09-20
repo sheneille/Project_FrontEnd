@@ -104,26 +104,43 @@ p{
 /* components library definition */
 
 /* text field*/
+
 input{
-  height: 32px;
   background: var(--white);
   border: 1px solid var(--grey-light);
   box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
-  border-radius: var(--border-radius);
   font-family: var(--font);
   font-size: var(--base-font-size);
   color: var(--black);
+}
+
+.textfield{
+  height: 32px;
+  border-radius: var(--border-radius);
   padding: 0 8px;
 }
 
-input:hover{
+.textfield:hover{
   background: var(--grey-extra-light);
 }
 
-input:focus{
+.textfield:focus{
   outline: none;
   border: 1px solid var(--primary-color);
   background: var(--grey-extra-light);
 }
 
 /* dropdown */
+
+/* checkbox */
+
+/* radio button */
+
+/* button */
+button{
+
+}
+
+button .btn-lg{
+
+}
