@@ -158,7 +158,6 @@ a{
 input{
   background: var(--white);
   border: 1px solid var(--grey-light);
-  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
   font-family: var(--font);
   font-size: var(--base-font-size);
   color: var(--black);
@@ -168,6 +167,7 @@ input{
 
 .textfield{
   height: 32px;
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
   border-radius: var(--border-radius);
   padding: 0 8px;
 }
@@ -305,6 +305,83 @@ label{
 }
 
 /* radio button */
+input .radio-button{
+  box-shadow: 0;
+  width: 100px;
+  height: 100px;
+}
+
+/* display of radio button */
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
+
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: var(--grey-extra-light);
+}
+.control input:checked ~ .control__indicator {
+  background: var(--white);
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: var(--white);
+  border: 1px solid var(--primary-color)
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: var(--grey-light);
+}
+.control--radio .control__indicator:after {
+  left: 5px;
+  top: 5px;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: var(--grey);
+}
+
+
+
 
 /* button */
 .btn{
@@ -391,6 +468,7 @@ label{
 
 /* Button - Cargo */
 .btn-cargo{
+    box-sizing: border-box;
     border: 1px solid var(--cargo);
     color: var(--cargo);
     background-color: none;
