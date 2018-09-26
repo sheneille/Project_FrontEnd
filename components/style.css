@@ -92,9 +92,9 @@ margin-bottom: 40px;
   --green: #4BC978;
   --blue: #65B5F6;
   --red: #F67F65;
-  --cargo: #3F9852;
+  --cargo: #34CF00;
   --container: #3869B1;
-  --vehicle: #E69249;
+  --vehicle: #CFB700;
 }
 /* ===========================================
           TYPOGRAPHY STYLESTYLESHEET
@@ -474,7 +474,7 @@ label{
 
 /* Toggle Button */
 .toggle-button *{
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 
@@ -506,6 +506,14 @@ label{
 
 .btn-service-status:hover{
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+.btn-service-status:hover svg .badge-md-grey{
+  fill: var(--grey);
+}
+
+.btn-service-status:hover g *{
+  fill: var(--white);
 }
 /* ===========================================
           ICON STYLESTYLESHEET
