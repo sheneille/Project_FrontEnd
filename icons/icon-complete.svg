@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="25">
+    <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
+        <circle class="badge-md" cx="13.137" cy="13.496" r="12.5" fill="#E8EBED"/>
+        <path fill="#444" d="M11.638 15.776l6.497-6.497a.4.4 0 0 1 .566 0l.372.372a.4.4 0 0 1 0 .565l-7.435 7.435a.4.4 0 0 1-.565 0L7.92 14.498a.4.4 0 0 1 0-.566l.371-.372a.4.4 0 0 1 .566 0l2.216 2.216a.4.4 0 0 0 .565 0z"/>
+    </g>
+</svg>

@@ -476,7 +476,9 @@ label{
 .toggle-button *{
   margin-right: 16px;
 }
-
+/* ===========================================
+          ICON STYLESTYLESHEET
+============================================= */
 /* icon size small */
 .icon-sm{
   height: 16px;
@@ -526,6 +528,39 @@ label{
 
 .icon-vehicle{
   fill: var(--vehicle);
+}
+
+.badge-md-grey:hover{
+  fill: var(--grey);
+}
+
+/*
+.badge-grey{
+  width: 24px;
+  height: 24px;
+} */
+
+
+/*
+.badge-grey{
+  background-color: var(--grey-light);
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  text-align: center;
+} */
+
+/* .badge-grey:hover{
+  background-color: var(--grey);
+}
+
+.badge-grey *:hover{
+  fill: white;
+} */
+
+g{
+  text-align: center;
 }
 
 /* ===========================================
