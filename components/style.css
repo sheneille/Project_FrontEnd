@@ -340,7 +340,6 @@ label{
   background-color: var(--primary-color-dark);
 }
 
-
 /* button: btn-md  */
 
 .btn-md{
@@ -373,21 +372,144 @@ label{
 .btn-md:active{
   background-color: var(--primary-color-dark);
 }
+/* button: btn-md btn-cargo */
+.btn-cargo, .btn-container, .btn-vehicle {
+  height: 36px;
+  padding: 0px 16px;
+  margin: 0;
+}
 
+.btn-cargo *, .btn-container *, .btn-vehicle * {
+  margin-right: 10px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.btn-cargo > h3:last-child, .btn-container > h3:last-child, .btn-vehicle > h3:last-child {
+  margin-right: 0px;
+}
+
+/* Button - Cargo */
 .btn-cargo{
     border: 1px solid var(--cargo);
-    color: var;
+    color: var(--cargo);
+    background-color: none;
 }
+
+.btn-cargo:hover{
+    border: 2px solid var(--cargo);
+    background-color: none;
+}
+
+.btn-cargo:focus{
+    border: 2px solid var(--cargo);
+    background-color: var(--cargo);
+    color: white;
+}
+
+.btn-cargo:active {
+    background-color: var(--cargo);
+    color: white;
+}
+
+.btn-cargo:active svg, .btn-cargo:focus svg{
+    fill: white;
+}
+
+/* Button - Container */
 
 .btn-container{
-    border: 1px solid var(--container);
-    color: ;
+  border: 1px solid var(--container);
+  color: var(--container);
+  background-color: none;
 }
+
+.btn-container:hover{
+    border: 2px solid var(--container);
+    background-color: none;
+}
+
+.btn-container:focus{
+    border: 2px solid var(--container);
+    background-color: var(--container);
+    color: white;
+}
+
+.btn-container:active {
+    background-color: var(--container);
+    color: white;
+}
+
+.btn-container:active svg, .btn-container:focus svg{
+    fill: white;
+}
+
+/* Button - Vehicle */
 
 .btn-vehicle{
-    border: 1px solid var(--vehicle);
+  border: 1px solid var(--vehicle);
+  color: var(--vehicle);
+  background-color: none;
 }
 
+.btn-vehicle:hover{
+    border: 2px solid var(--vehicle);
+    background-color: none;
+}
+
+.btn-vehicle:focus{
+    border: 2px solid var(--vehicle);
+    background-color: var(--vehicle);
+    color: white;
+}
+
+.btn-vehicle:active {
+    background-color: var(--vehicle);
+    color: white;
+}
+
+.btn-vehicle:active svg, .btn-vehicle:focus svg{
+    fill: white;
+}
+
+/* Toggle Button */
+.toggle-button *{
+  margin-right: 16px;
+}
+
+
+/* Service Status Buttons */
+.service-status-buttons{
+  width: 100%;
+  vertical-align: middle;
+}
+/* Service Status Button */
+
+.btn-service-status{
+  height: 48px;
+  width: calc(100% / 3.5);
+  background-color: var(--white);
+  border: 1px solid var(--grey-light);
+  padding: 0;
+  margin: -2px;
+}
+
+.btn-service-status *{
+  display: inline;
+  vertical-align: middle;
+  margin-right: 24px;
+}
+
+.btn-service-status:last-child{
+  margin-right: 0px;
+}
+
+.btn-service-status:hover{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+/* ===========================================
+          ICON STYLESTYLESHEET
+============================================= */
 /* icon size small */
 .icon-sm{
   height: 16px;
@@ -425,6 +547,51 @@ label{
 
 .icon-primary-color{
   fill: var(--primary-color);
+}
+
+.icon-cargo{
+  fill: var(--cargo);
+}
+
+.icon-container{
+  fill: var(--container);
+}
+
+.icon-vehicle{
+  fill: var(--vehicle);
+}
+
+.badge-md-grey:hover{
+  fill: var(--grey);
+}
+
+/*
+.badge-grey{
+  width: 24px;
+  height: 24px;
+} */
+
+
+/*
+.badge-grey{
+  background-color: var(--grey-light);
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  text-align: center;
+} */
+
+/* .badge-grey:hover{
+  background-color: var(--grey);
+}
+
+.badge-grey *:hover{
+  fill: white;
+} */
+
+g{
+  text-align: center;
 }
 
 /* ===========================================
