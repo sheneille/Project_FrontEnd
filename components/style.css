@@ -476,6 +476,37 @@ label{
 .toggle-button *{
   margin-right: 16px;
 }
+
+
+/* Service Status Buttons */
+.service-status-buttons{
+  width: 100%;
+  vertical-align: middle;
+}
+/* Service Status Button */
+
+.btn-service-status{
+  height: 48px;
+  width: calc(100% / 3.5);
+  background-color: var(--white);
+  border: 1px solid var(--grey-light);
+  padding: 0;
+  margin: -2px;
+}
+
+.btn-service-status *{
+  display: inline;
+  vertical-align: middle;
+  margin-right: 24px;
+}
+
+.btn-service-status:last-child{
+  margin-right: 0px;
+}
+
+.btn-service-status:hover{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
 /* ===========================================
           ICON STYLESTYLESHEET
 ============================================= */
