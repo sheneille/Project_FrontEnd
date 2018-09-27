@@ -43,14 +43,33 @@
 <input class="textfield" type="text">
 
 <!-- Dropdown -->
-<div class="label"> Dropdown </div>
-<div class="dropdown">
-<select>
-  <option value="">Gender</option>
-  <option value="1">Male</option>
-  <option value="0">Female</option>
-</select>
-</div>
+<div class="control-group">
+    <h1>Select boxes</h1>
+    <div class="select">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select>
+        <option>Second select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+    <div class="select">
+      <select disabled="disabled">
+        <option>Disabled</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+  </div>
 
 <!-- Dropdown: Date -->
 <!-- <div class="label"> Dropdown: Date picker </div>
@@ -73,44 +92,50 @@
 <!-- Checkbox -->
 <div class="label"> Checkbox </div>
 <ul class="unstyled centered">
-<li>
-<input class="checkbox" id="checkbox-1" type="checkbox" value="value1">
-<label for="checkbox-1">Checkbox</label>
-</li>
-<li>
-<input class="checkbox" id="checkbox-2" type="checkbox" value="value2" checked>
-<label for="checkbox-2">CSS Only</label>
-</li>
-<li>
-<input class="checkbox" id="checkbox-3" type="checkbox" value="value3" disabled>
-<label for="checkbox-3">A disabled checkbox</label>
-</li>
-<li>
-<input class="checkbox" id="checkbox-4" type="checkbox" value="value4">
-<label for="checkbox-4">Fourth option</label>
-</li>
+  <li>
+    <input class="checkbox" id="checkbox-1" type="checkbox" value="value1">
+    <label for="checkbox-1">Checkbox</label>
+  </li>
+  <li>
+    <input class="checkbox" id="checkbox-2" type="checkbox" value="value2" checked>
+    <label for="checkbox-2">CSS Only</label>
+  </li>
+  <li>
+    <input class="checkbox" id="checkbox-3" type="checkbox" value="value3" disabled>
+    <label for="checkbox-3">A disabled checkbox</label>
+  </li>
+  <li>
+    <input class="checkbox" id="checkbox-4" type="checkbox" value="value4">
+    <label for="checkbox-4">Fourth option</label>
+  </li>
 </ul>
 
 <!-- Radio Button -->
 <div class="label"> Radio Button </div>
-<input class="radio-button" type="radio">
-
+  <li>
     <label class="control control--radio">First radio
-      <input type="radio" name="radio" checked="checked"/>
-      <div class="control__indicator"></div>
-    </label>
+    <input type="radio" name="radio" checked="checked"/>
+    <div class="control__indicator"></div>
+  </label>
+  </li>
+  <li>
     <label class="control control--radio">Second radio
-      <input type="radio" name="radio"/>
-      <div class="control__indicator"></div>
-    </label>
+    <input type="radio" name="radio"/>
+    <div class="control__indicator"></div>
+  </label>
+  </li>
+  <li>
     <label class="control control--radio">Disabled
-      <input type="radio" name="radio2" disabled="disabled"/>
-      <div class="control__indicator"></div>
-    </label>
+    <input type="radio" name="radio2" disabled="disabled"/>
+    <div class="control__indicator"></div>
+  </label>
+  </li>
+  <li>
     <label class="control control--radio">Disabled & checked
-      <input type="radio" name="radio2" disabled="disabled" checked="checked"/>
-      <div class="control__indicator"></div>
-    </label>
+    <input type="radio" name="radio2" disabled="disabled" checked="checked"/>
+    <div class="control__indicator"></div>
+  </label>
+  </li>
 
 <!-- Button: btn--lg -->
 <div class="label"> Button: btn--lg </div>
