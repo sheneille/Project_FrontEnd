@@ -2,6 +2,7 @@ body{
 background-color: #eee;
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 ul{
@@ -92,9 +93,9 @@ margin-bottom: 40px;
   --green: #4BC978;
   --blue: #65B5F6;
   --red: #F67F65;
-  --cargo: #3F9852;
-  --container: #3869B1;
-  --vehicle: #E69249;
+  --cargo: #D66267;
+  --container: #2D4E74;
+  --vehicle: #518969;
 }
 /* ===========================================
           TYPOGRAPHY STYLESTYLESHEET
@@ -158,7 +159,6 @@ a{
 input{
   background: var(--white);
   border: 1px solid var(--grey-light);
-  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
   font-family: var(--font);
   font-size: var(--base-font-size);
   color: var(--black);
@@ -168,6 +168,7 @@ input{
 
 .textfield{
   height: 32px;
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
   border-radius: var(--border-radius);
   padding: 0 8px;
 }
@@ -183,49 +184,70 @@ input{
 }
 
 /* dropdown */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 165px;
+}
+.select select {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 0;
+  background: var(--grey-extra-light);
+  color: var(--black);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--grey-light);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font);
+  font-size: var(--base-font-size);
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: var(--black);
+  background: var(--grey-light);
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	transform: rotate(135deg);
+	width: 0.45em;
+}
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow {
+  border-top-color: #000;
+}
+.select select:disabled ~ .select__arrow {
+  border-top-color: #ccc;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
 
 /* dropdown */
 
 label{
   margin-left: 20px;
+  font-family: var(--font);
+  font-size: var(--base-font-size);
 }
 #datepicker{
   width:180px;
@@ -281,7 +303,7 @@ label{
   background: var(--white);
 }
 .checkbox:disabled + label {
-  color: #b8b8b8;
+  color: var(--grey-light);
   cursor: auto;
 }
 .checkbox:disabled + label:before {
@@ -305,6 +327,89 @@ label{
 }
 
 /* radio button */
+input .radio-button{
+  box-shadow: 0;
+  width: 100px;
+  height: 100px;
+}
+
+/* display of radio button */
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: var(--white);
+  border: 1px solid var(--grey-light);
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
+
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: var(--grey-extra-light);
+}
+.control input:checked ~ .control__indicator {
+  background: var(--white);
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator{
+  background: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.control input:checked:active ~ .control__indicator {
+  border: 1px solid var(--grey-light);
+}
+
+.control input:checked:focus ~ .control__indicator {
+  border: 1px solid var(--primary-color);
+}
+
+.control input:disabled ~ .control__indicator {
+  background: var(--grey-extra-light);
+  pointer-events: none;
+  box-shadow: none;
+  color: var(--grey-extra-light);
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: var(--grey-light);
+}
+.control--radio .control__indicator:after {
+  left: 5px;
+  top: 5px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: var(--grey);
+}
+
 
 /* button */
 .btn{
@@ -391,6 +496,7 @@ label{
 
 /* Button - Cargo */
 .btn-cargo{
+    box-sizing: border-box;
     border: 1px solid var(--cargo);
     color: var(--cargo);
     background-color: none;
@@ -474,7 +580,7 @@ label{
 
 /* Toggle Button */
 .toggle-button *{
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 
@@ -506,6 +612,14 @@ label{
 
 .btn-service-status:hover{
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+.btn-service-status:hover svg .badge-md-grey{
+  fill: var(--grey);
+}
+
+.btn-service-status:hover g *{
+  fill: var(--white);
 }
 /* ===========================================
           ICON STYLESTYLESHEET
