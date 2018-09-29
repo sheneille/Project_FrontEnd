@@ -192,13 +192,13 @@ input{
   width: 165px;
   margin-right: 16px;
 }
+
 .select select {
   display: inline-block;
   width: 100%;
   cursor: pointer;
   padding: 10px 15px;
   outline: 0;
-  border: 0;
   background: var(--grey-extra-light);
   color: var(--black);
   border-radius: var(--border-radius);
@@ -209,6 +209,14 @@ input{
   font-family: var(--font);
   font-size: var(--base-font-size);
 }
+
+.select select::after{
+  content: "hello";
+  display: block;
+  background-color: red;
+}
+
+
 .select select::-ms-expand {
   display: none;
 }
@@ -246,17 +254,219 @@ input{
 
 /* dropdown */
 
-label{
-  margin-left: 20px;
+:root{
+  --base: 10;
+  font-size: 10px;
+  --font: 'Rubik', sans-serif;
+  --primary-color: #00CECD;
+  --primary-color-02: #8AE6E6;
+  --primary-color-dark: #02ACAC;
+  --primary-color-extra-dark: #004D4D;
+  --black: #444;
+  --grey: #8A9399;
+  --grey-light: #E8EBED;
+  --grey-extra-light: #F5F5F5;
+  --white: #fff;
+  --base-font-size: 1.4rem;
+  --border-radius: 2px;
+  --yellow: #F6E065;
+  --green: #4BC978;
+  --blue: #65B5F6;
+  --red: #F67F65;
+  --cargo: #D66267;
+  --container: #2D4E74;
+  --vehicle: #518969;
+}
+
+/* Select Export */
+
+.select-export {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 165px;
+  margin-left: 90px;
+  margin-right: 24px;
+}
+
+.select-export select {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  background: var(--grey-extra-light);
+  color: var(--black);
+  border-radius: 0 2px 2px 0;
+  border: 1px solid var(--grey-light);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   font-family: var(--font);
   font-size: var(--base-font-size);
 }
-#datepicker{
-  width:180px;
-  margin: 0 20px 20px 20px;
+
+.select-export::after{
+  content: "EXPORT";
+  font-family: var(--font);
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: -92px;
+  width: 92px;
+  height: inherit;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--grey-light);
+  border-radius: 2px 0 0 2px;
 }
-#datepicker > span:hover{
+
+.select-export select::-ms-expand {
+  display: none;
+}
+.select-export select:hover,
+.select-export select:focus {
+  color: var(--black);
+  background: var(--grey-light);
+}
+.select-export select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	transform: rotate(135deg);
+	width: 0.45em;
+}
+.select-export select:hover ~ .select__arrow,
+.select-export select:focus ~ .select__arrow {
+  border-top-color: #000;
+}
+.select-export select:disabled ~ .select__arrow {
+  border-top-color: #ccc;
+}
+
+/* Select Import */
+
+.select-import {
+  position: relative;
+  display: inline-block;
+  width: 165px;
+  margin-left: 90px;
+  margin-right: 24px;
+}
+
+.select-import select {
+  display: inline-block;
+  width: 100%;
   cursor: pointer;
+  padding: 7px 15px 6px 15px;
+  outline: 0;
+  background: var(--grey-extra-light);
+  color: var(--black);
+  border-radius: 0 2px 2px 0;
+  border: 1px solid var(--grey-light);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font);
+  font-size: var(--base-font-size);
+}
+
+.select-import::after{
+  content: "IMPORT";
+  font-family: var(--font);
+  font-size: var(--base-font-size);
+  font-weight: 500;
+  padding-top: 08px;
+  padding-bottom: 07px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: -92px;
+  width: 92px;
+  height: inherit;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--grey-light);
+  border-radius: 2px 0 0 2px;
+}
+
+.select-import select::-ms-expand {
+  display: none;
+}
+.select-import select:hover,
+.select-import select:focus {
+  color: var(--black);
+  background: var(--grey-light);
+}
+.select-import select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select__arrow {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	transform: rotate(135deg);
+	width: 0.45em;
+}
+.select-import select:hover ~ .select__arrow,
+.select-import select:focus ~ .select__arrow {
+  border-top-color: #000;
+}
+.select-import select:disabled ~ .select__arrow {
+  border-top-color: #ccc;
+}
+
+/* Select Notification */
+.notification{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid var(--grey-light);
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+}
+
+.icon-md{
+  width: 24px;
+  height: 24px;
+}
+
+.notification svg{
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 12px;
+}
+
+/* Select Notification - Hover */
+
+.notification:hover{
+  background-color: var(--grey-light);
 }
 
 /* checkbox */
