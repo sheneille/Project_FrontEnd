@@ -82,6 +82,7 @@ margin-bottom: 40px;
   --primary-color: #00CECD;
   --primary-color-02: #8AE6E6;
   --primary-color-dark: #02ACAC;
+  --primary-color-extra-dark: #004D4D;
   --black: #444;
   --grey: #8A9399;
   --grey-light: #E8EBED;
@@ -189,6 +190,7 @@ input{
   display: inline-block;
   margin-bottom: 15px;
   width: 165px;
+  margin-right: 16px;
 }
 .select select {
   display: inline-block;
@@ -429,8 +431,9 @@ input .radio-button{
 .btn-lg{
   width: 220px;
   height: 48px;
+  font-weight: 400;
   background-color: var(--primary-color);
-  color: var(--white);
+  color: var(--primary-color-extra-dark);
 }
 
 .btn-lg:hover{
@@ -454,7 +457,7 @@ input .radio-button{
 
 .btn-fill{
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--primary-color-extra-dark);
 }
 
 .btn-outline{
@@ -478,109 +481,302 @@ input .radio-button{
   background-color: var(--primary-color-dark);
 }
 /* button: btn-md btn-cargo */
-.btn-cargo, .btn-container, .btn-vehicle {
-  height: 36px;
-  padding: 0px 16px;
+
+.btn-toggle{
+  border: 1px solid rgba(0,0,0,0);
+  color: var(--cargo);
+  padding:0;
   margin: 0;
 }
 
-.btn-cargo *, .btn-container *, .btn-vehicle * {
-  margin-right: 10px;
+.mother-cargo, .mother-container, .mother-vehicle, .container, .icon, .cat, .cat02, .cat03, .val, .val02, .val03{
+  transition: all .4s;
+}
+
+.mother-cargo, .mother-container, .mother-vehicle{
+  padding: 0 12px;
+  width: 80px;
+  height: 32px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+}
+
+.container{
+  position: relative;
+}
+
+.icon{
   display: inline;
-  vertical-align: middle;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  text-align: left;
 }
 
-.btn-cargo > h3:last-child, .btn-container > h3:last-child, .btn-vehicle > h3:last-child {
-  margin-right: 0px;
+.cat{
+  position: absolute;
+  top: -6px;
+  left: 36px;
+  display: none;
+  opacity: 0;
 }
 
-/* Button - Cargo */
-.btn-cargo{
+ .cat02{
+  position: absolute;
+  top: -6px;
+  left: 48px;
+  display: none;
+  opacity: 0;
+}
+
+ .cat03{
+   position: absolute;
+   top: -6px;
+   left: 48px;
+  display: none;
+  opacity: 0;
+}
+
+.val{
+  position: absolute;
+   top: -5px;
+   left: 36px;
+  display: inline;
+  color: var(--black);
+}
+
+.val02{
+  position: absolute;
+   top: -5px;
+   left: 48px;
+  display: inline;
+  color: var(--black);
+}
+
+.val03{
+  position: absolute;
+   top: -5px;
+   left: 48px;
+  display: inline;
+  color: var(--black);
+}
+
+button:hover .btn-cargo{
     box-sizing: border-box;
-    border: 1px solid var(--cargo);
-    color: var(--cargo);
-    background-color: none;
+    background-color: red;
+    width: 120px;
 }
 
-.btn-cargo:hover{
-    border: 2px solid var(--cargo);
-    background-color: none;
+button:hover .icon{
+  fill: white;
 }
 
-.btn-cargo:focus{
-    border: 2px solid var(--cargo);
-    background-color: var(--cargo);
-    color: white;
+button:hover .val{
+  display: inline;
+  position: absolute;
+  left: 86px;
+  color: var(--white);
 }
 
-.btn-cargo:active {
-    background-color: var(--cargo);
-    color: white;
+button:hover .val02{
+  display: inline;
+  position: absolute;
+  left: 124px;
+  color: var(--white);
 }
 
-.btn-cargo:active svg, .btn-cargo:focus svg{
-    fill: white;
+button:hover .val03{
+  display: inline;
+  position: absolute;
+  left: 108px;
+  color: var(--white);
 }
 
-/* Button - Container */
-
-.btn-container{
-  border: 1px solid var(--container);
-  color: var(--container);
-  background-color: none;
+button:hover .cat{
+  opacity: 1;
+  display: inline;
+  color: white;
 }
 
-.btn-container:hover{
-    border: 2px solid var(--container);
-    background-color: none;
+button:hover .cat02{
+  opacity: 1;
+  display: inline;
+  color: white;
 }
 
-.btn-container:focus{
-    border: 2px solid var(--container);
-    background-color: var(--container);
-    color: white;
+button:hover .cat03{
+  opacity: 1;
+  display: inline;
+  color: white;
 }
 
-.btn-container:active {
-    background-color: var(--container);
-    color: white;
+button:hover{
+  overflow: visible;
 }
 
-.btn-container:active svg, .btn-container:focus svg{
-    fill: white;
+button:hover .mother-cargo{
+  width: 110px;
+  background-color: var(--cargo);
 }
 
-/* Button - Vehicle */
-
-.btn-vehicle{
-  border: 1px solid var(--vehicle);
-  color: var(--vehicle);
-  background-color: none;
+button:hover .mother-container{
+  width: 140px;
+  background-color: var(--container);
 }
 
-.btn-vehicle:hover{
-    border: 2px solid var(--vehicle);
-    background-color: none;
+button:hover .mother-vehicle{
+  width: 124px;
+  background-color: var(--vehicle);
 }
 
-.btn-vehicle:focus{
-    border: 2px solid var(--vehicle);
-    background-color: var(--vehicle);
-    color: white;
+/* Button Focus */
+
+button:active{
+ outline: none;
 }
 
-.btn-vehicle:active {
-    background-color: var(--vehicle);
-    color: white;
+button:focus{
+ outline: none;
 }
 
-.btn-vehicle:active svg, .btn-vehicle:focus svg{
-    fill: white;
+button:focus .btn-cargo{
+ box-sizing: border-box;
+ width: 120px;
 }
 
-/* Toggle Button */
-.toggle-button *{
-  margin-right: 8px;
+button:focus .icon{
+  fill: white;
+}
+
+button:focus .val{
+  display: inline;
+  position: absolute;
+  left: 86px;
+  color: var(--white);
+}
+
+button:focus .val02{
+  display: inline;
+  position: absolute;
+  left: 124px;
+  color: var(--white);
+}
+
+button:focus .val03{
+  display: inline;
+  position: absolute;
+  left: 108px;
+  color: var(--white);
+}
+
+button:focus .cat{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:focus .cat02{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:focus .cat03{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:focus{
+  overflow: visible;
+}
+
+button:focus .mother-cargo{
+  width: 110px;
+  background-color: var(--cargo);
+}
+
+button:focus .mother-container{
+  width: 140px;
+  background-color: var(--container);
+}
+
+button:focus .mother-vehicle{
+  width: 124px;
+  background-color: var(--vehicle);
+}
+
+/* Button Active */
+
+button:active{
+ outline: none;
+}
+
+button:active .btn-cargo{
+ box-sizing: border-box;
+ width: 120px;
+}
+
+button:active .icon{
+  fill: white;
+}
+
+button:active .val{
+  display: inline;
+  position: absolute;
+  left: 86px;
+  color: var(--white);
+}
+
+button:active .val02{
+  display: inline;
+  position: absolute;
+  left: 124px;
+  color: var(--white);
+}
+
+button:active .val03{
+  display: inline;
+  position: absolute;
+  left: 108px;
+  color: var(--white);
+}
+
+button:active .cat{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:active .cat02{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:active .cat03{
+  opacity: 1;
+  display: inline;
+  color: white;
+}
+
+button:active{
+  overflow: visible;
+}
+
+button:active .mother-cargo{
+  width: 110px;
+  background-color: var(--cargo);
+}
+
+button:active .mother-container{
+  width: 140px;
+  background-color: var(--container);
+}
+
+button:active .mother-vehicle{
+  width: 124px;
+  background-color: var(--vehicle);
 }
 
 
