@@ -254,29 +254,6 @@ input{
 
 /* dropdown */
 
-:root{
-  --base: 10;
-  font-size: 10px;
-  --font: 'Rubik', sans-serif;
-  --primary-color: #00CECD;
-  --primary-color-02: #8AE6E6;
-  --primary-color-dark: #02ACAC;
-  --primary-color-extra-dark: #004D4D;
-  --black: #444;
-  --grey: #8A9399;
-  --grey-light: #E8EBED;
-  --grey-extra-light: #F5F5F5;
-  --white: #fff;
-  --base-font-size: 1.4rem;
-  --border-radius: 2px;
-  --yellow: #F6E065;
-  --green: #4BC978;
-  --blue: #65B5F6;
-  --red: #F67F65;
-  --cargo: #D66267;
-  --container: #2D4E74;
-  --vehicle: #518969;
-}
 
 /* Select Export */
 
@@ -293,7 +270,7 @@ input{
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 7px 15px 6px 15px;
   outline: 0;
   background: var(--grey-extra-light);
   color: var(--black);
@@ -311,8 +288,8 @@ input{
   font-family: var(--font);
   font-size: var(--base-font-size);
   font-weight: 500;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 08px;
+  padding-bottom: 07px;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -640,7 +617,7 @@ input .radio-button{
 /* need to implement focus for the buttons */
 .btn-lg{
   width: 220px;
-  height: 48px;
+  height: 46px;
   font-weight: 400;
   background-color: var(--primary-color);
   color: var(--primary-color-extra-dark);
@@ -989,12 +966,80 @@ button:active .mother-vehicle{
   background-color: var(--vehicle);
 }
 
+/* Menu */
+
+.menu{
+position: relative;
+ display: inline-block;
+ background-color: var(--grey-light);
+ padding: 0px 16px 0 16px;
+ width: 120px;
+ max-height: 46px;
+}
+
+.menu h3{
+  position: absolute;
+  font-family: var(--font);
+  font-size: var(--base-font-size);
+  font-weight: 400;
+  left: 48px;
+  top: 0px;
+}
+
+.menu-hamburger{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger{
+  position: absolute;
+  top:10px;
+  bottom: 0;
+}
+
+.hamburger .line{
+  width: 18px;
+  height: 1px;
+  background-color: #444;
+  display: block;
+  margin: 5px auto;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: 'pointer';
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  -webkit-transform: translateY(7px) rotate(45deg);
+  -ms-transform: translateY(7px) rotate(45deg);
+  -o-transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-5px) rotate(-45deg);
+  -ms-transform: translateY(-5px) rotate(-45deg);
+  -o-transform: translateY(-5px) rotate(-45deg);
+  transform: translateY(-5px) rotate(-45deg);
+}
 
 /* Service Status Buttons */
 .service-status-buttons{
   width: 100%;
   vertical-align: middle;
 }
+
+
 /* Service Status Button */
 
 .btn-service-status{
