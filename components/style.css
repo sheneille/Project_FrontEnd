@@ -254,29 +254,6 @@ input{
 
 /* dropdown */
 
-:root{
-  --base: 10;
-  font-size: 10px;
-  --font: 'Rubik', sans-serif;
-  --primary-color: #00CECD;
-  --primary-color-02: #8AE6E6;
-  --primary-color-dark: #02ACAC;
-  --primary-color-extra-dark: #004D4D;
-  --black: #444;
-  --grey: #8A9399;
-  --grey-light: #E8EBED;
-  --grey-extra-light: #F5F5F5;
-  --white: #fff;
-  --base-font-size: 1.4rem;
-  --border-radius: 2px;
-  --yellow: #F6E065;
-  --green: #4BC978;
-  --blue: #65B5F6;
-  --red: #F67F65;
-  --cargo: #D66267;
-  --container: #2D4E74;
-  --vehicle: #518969;
-}
 
 /* Select Export */
 
@@ -640,7 +617,7 @@ input .radio-button{
 /* need to implement focus for the buttons */
 .btn-lg{
   width: 220px;
-  height: 48px;
+  height: 46px;
   font-weight: 400;
   background-color: var(--primary-color);
   color: var(--primary-color-extra-dark);
@@ -992,10 +969,10 @@ button:active .mother-vehicle{
 /* Menu */
 
 .menu{
-  position: relative;
+position: relative;
  display: inline-block;
  background-color: var(--grey-light);
- padding: 16px 16px 0 16px;
+ padding: 0px 16px 0 16px;
  width: 120px;
  max-height: 46px;
 }
@@ -1019,7 +996,7 @@ button:active .mother-vehicle{
 
 .hamburger{
   position: absolute;
-  top:-6px;
+  top:10px;
   bottom: 0;
 }
 
