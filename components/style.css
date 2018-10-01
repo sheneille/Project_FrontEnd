@@ -293,7 +293,7 @@ input{
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 7px 15px 6px 15px;
   outline: 0;
   background: var(--grey-extra-light);
   color: var(--black);
@@ -311,8 +311,8 @@ input{
   font-family: var(--font);
   font-size: var(--base-font-size);
   font-weight: 500;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 08px;
+  padding-bottom: 07px;
   position: absolute;
   overflow: hidden;
   top: 0;
