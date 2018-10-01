@@ -164,6 +164,15 @@ a{
 
 /* text field*/
 
+.textfield-component{
+  display: block;
+}
+
+.textfield-component h3{
+  display: inline;
+  margin-right: 16px;
+}
+
 input{
   background: var(--white);
   border: 1px solid var(--grey-light);
