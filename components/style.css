@@ -73,7 +73,7 @@ margin-bottom: 40px;
   padding: 40px 80px;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
-/* declaring variables */
+/* Declaring CSS variables: For font, colors and spacing. This will help us implement one change across screens */
 
 :root{
   --base: 10;
@@ -97,11 +97,17 @@ margin-bottom: 40px;
   --cargo: #D66267;
   --container: #2D4E74;
   --vehicle: #518969;
+  --xs: .4rem;
+  --s: .8rem;
+  --m: 1.6rem;
+  --l: 2.4rem;
+  --xl: 3.2rem;
+  --xxl: 0;
 }
 
 .vertical-divider{
-  min-width: 1px;
-  height: 32px;
+  min-width: .1rem;
+  height: 3.2rem;
   background-color: var(--grey-light);
   display: inline-block;
 }
@@ -170,7 +176,7 @@ a{
 
 .textfield-component h3{
   display: inline;
-  margin-right: 16px;
+  margin-right: var(--m);
 }
 
 input{
@@ -187,7 +193,7 @@ input{
   height: 32px;
   box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.10);
   border-radius: var(--border-radius);
-  padding: 0 8px;
+  padding: 0 var(--s);
 }
 
 .textfield:hover{
@@ -204,9 +210,9 @@ input{
 .select {
   position: relative;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: var(--m);
   width: 165px;
-  margin-right: 16px;
+  margin-right: var(--m);
 }
 
 .select select {
@@ -276,10 +282,10 @@ input{
 .select-export {
   position: relative;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: var(--m);
   width: 165px;
   margin-left: 90px;
-  margin-right: 24px;
+  margin-right: var(--m);
 }
 
 .select-export select {
@@ -360,7 +366,7 @@ input{
   display: inline-block;
   width: 165px;
   margin-left: 90px;
-  margin-right: 24px;
+  margin-right: var(--m);
 }
 
 .select-import select {
@@ -483,7 +489,7 @@ label{
 }
 .checkbox + label:before {
   content: '';
-  margin-right: 10px;
+  margin-right: var(--m);
   display: inline-block;
   vertical-align: text-top;
   width: 16px;
@@ -543,7 +549,7 @@ input .radio-button{
   display: block;
   position: relative;
   padding-left: 30px;
-  margin-bottom: 15px;
+  margin-bottom: var(--m);
   cursor: pointer;
 }
 .control input {
@@ -1021,7 +1027,7 @@ position: relative;
   height: 1px;
   background-color: #444;
   display: block;
-  margin: 5px auto;
+  margin: var(--xs) auto;
   border-radius: 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -1070,7 +1076,7 @@ position: relative;
 .btn-service-status *{
   display: inline;
   vertical-align: middle;
-  margin-right: 24px;
+  margin-right: var(--m);
 }
 
 .btn-service-status:last-child{
